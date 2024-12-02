@@ -42,6 +42,7 @@ extension LocationsView {
                     .foregroundStyle(Color(.black))
                     .frame(height: 45)
                     .frame(maxWidth: .infinity)
+                    .animation(.none, value: vm.mapLocation)
                     .overlay(alignment: .leading){
                         Image(systemName: "arrow.down")
                             .font(.headline)

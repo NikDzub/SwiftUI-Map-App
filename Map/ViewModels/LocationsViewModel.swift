@@ -52,7 +52,7 @@ class LocationsViewModel: ObservableObject, Observable {
     func showNextLocation(location: Location) {
         withAnimation(.easeInOut) {
             mapLocation = location
-//            finish
+            showLocationsList.toggle()
         }
     }
 }

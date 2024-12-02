@@ -13,7 +13,7 @@ struct LocationsListView: View {
     var body: some View {
         List {
             ForEach(vm.locations) { location in
-                Button (action: ) {
+                Button (action: {vm.showNextLocation(location: location)}) {
                     listRowView(location: location)
                 }
             }
