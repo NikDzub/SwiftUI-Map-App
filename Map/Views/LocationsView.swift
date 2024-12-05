@@ -20,8 +20,9 @@ struct LocationsView: View {
             VStack(spacing: 0) {
                 header
                     .padding()
-                
                 Spacer()
+                LocationPreviewView(location: vm.mapLocation)
+                
             }
         }
     }
@@ -54,8 +55,6 @@ extension LocationsView {
             if vm.showLocationsList {
                 LocationsListView()
             }
-            
-            
         }
         .background(.thickMaterial)
         .cornerRadius(5)

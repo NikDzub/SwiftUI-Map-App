@@ -16,6 +16,7 @@ struct LocationsListView: View {
                 Button (action: {vm.showNextLocation(location: location)}) {
                     listRowView(location: location)
                 }
+                .foregroundColor(location == vm.mapLocation ? Color(.gray) : Color(.black))
             }
         }
         .listStyle(PlainListStyle())
@@ -28,7 +29,6 @@ struct LocationsListView: View {
 }
 
 extension LocationsListView {
-    
     private func listRowView(location: Location) -> some View {
         HStack {
             if let imageName = location.imageNames.first {
