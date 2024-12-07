@@ -21,8 +21,13 @@ struct LocationsView: View {
                 header
                     .padding()
                 Spacer()
-                LocationPreviewView(location: vm.mapLocation)
                 
+                ZStack {
+                    LocationPreviewView(location: vm.mapLocation)
+                        .cornerRadius(20)
+                        .padding(10)
+                        .shadow(color: Color.blue.opacity(0.7), radius: 10)
+                }
             }
         }
     }

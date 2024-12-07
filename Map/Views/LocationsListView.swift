@@ -13,7 +13,7 @@ struct LocationsListView: View {
     var body: some View {
         List {
             ForEach(vm.locations) { location in
-                Button (action: {vm.showNextLocation(location: location)}) {
+                Button (action: {vm.showNextLocation(location: location, toggle: true)}) {
                     listRowView(location: location)
                 }
                 .foregroundColor(location == vm.mapLocation ? Color(.gray) : Color(.black))

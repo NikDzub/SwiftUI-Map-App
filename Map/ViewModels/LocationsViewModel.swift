@@ -49,10 +49,28 @@ class LocationsViewModel: ObservableObject, Observable {
         }
     }
     
-    func showNextLocation(location: Location) {
+    func showNextLocation(location: Location, toggle: Bool) {
         withAnimation(.easeInOut) {
             mapLocation = location
-            showLocationsList.toggle()
+            if toggle {
+                toggleLocationsList()
+            }
+        }
+    }
+    
+    func nextButtonPressed() {
+        guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation })
+        else {
+            print("Could not find current index.")
+            return
+        }
+        print(currentIndex)
+        let nextIndex = currentIndex + 1
+        if locations.indices.contains(nextIndex) {
+            showNextLocation(location: locations[nextIndex], toggle: false)
+        } else {
+            showNextLocation(location: locations.first!, toggle: false)
+            return
         }
     }
 }

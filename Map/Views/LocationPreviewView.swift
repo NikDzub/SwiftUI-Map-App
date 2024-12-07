@@ -21,6 +21,7 @@ struct LocationPreviewView: View {
                 titleSection
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundColor(Color.white)
             
             VStack(spacing: 8) {
                 learnMoreButton
@@ -29,9 +30,11 @@ struct LocationPreviewView: View {
             .frame(maxHeight: .infinity, alignment: .top)
             
             
+            
         }
         .padding(15)
         .frame(maxHeight: 200)
+        .background(Color.black.opacity(0.5))
     }
 }
 
@@ -61,6 +64,7 @@ extension LocationPreviewView {
                 .fontWeight(.bold)
             Text(location.cityName)
                 .font(.subheadline)
+                .fontWeight(.bold)
         }
         
     }
@@ -72,7 +76,7 @@ extension LocationPreviewView {
         }
         .buttonStyle(.plain)
         .frame(width: 120, height: 45)
-        .border(.gray)
+//        .border(.gray)
         .background(Color(.systemGray6))
         .cornerRadius(10)
     }
@@ -80,15 +84,17 @@ extension LocationPreviewView {
 //    FIN THE BORDER
     
     private var nextButton: some View {
-        Button {} label: {
+        Button {
+            vm.nextButtonPressed()
+        } label: {
             Text("Next")
                 .font(.headline)
         }
         .buttonStyle(.plain)
         .frame(width: 120, height: 45)
         .background(Color(.systemGray6))
-        .border(.gray)
-        .cornerRadius(20)
+//        .border(.gray)
+        .cornerRadius(10)
         
     }
     
